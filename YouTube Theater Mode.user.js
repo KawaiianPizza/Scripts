@@ -4,8 +4,8 @@
 // @match       https://www.youtube.com/*
 // @run-at      document-body
 // @version     1.2.13
-// @downloadURL https://kawaiian.pizza/YouTube Theater Mode.user.js
-// @homepageURL https://kawaiian.pizza/YouTube Theater Mode.user.js
+// @downloadURL https://github.com/KawaiianPizza/Scripts/raw/main/YouTube%20Theater%20Mode.user.js
+// @homepageURL https://github.com/KawaiianPizza/Scripts/raw/main/YouTube%20Theater%20Mode.user.js
 // @author      Kawaiian Pizza
 // @description 4/4/2022, 9:16:34 PM
 // ==/UserScript==
