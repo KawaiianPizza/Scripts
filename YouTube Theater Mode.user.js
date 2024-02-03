@@ -3,9 +3,9 @@
 // @namespace   Violentmonkey Scripts
 // @match       https://www.youtube.com/*
 // @run-at      document-body
-// @version     1.2.13
-// @downloadURL https://github.com/KawaiianPizza/Scripts/raw/main/YouTube%20Theater%20Mode.user.js
-// @homepageURL https://github.com/KawaiianPizza/Scripts/raw/main/YouTube%20Theater%20Mode.user.js
+// @version     1.2.14
+// @downloadURL https://kawaiian.pizza/YouTube Theater Mode.user.js
+// @homepageURL https://kawaiian.pizza/YouTube Theater Mode.user.js
 // @author      Kawaiian Pizza
 // @description 4/4/2022, 9:16:34 PM
 // ==/UserScript==
@@ -82,7 +82,11 @@ background: unset !important;
 }
 .html5-video-container {
 text-align: -webkit-center !important;
-}`
+}
+#cinematics>div>div {
+transform: scale(4, 2) !important;
+}
+`
 
 // Hidden header
 style.textContent += `
