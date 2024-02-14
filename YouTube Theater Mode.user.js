@@ -3,9 +3,9 @@
 // @namespace   Violentmonkey Scripts
 // @match       https://www.youtube.com/*
 // @run-at      document-body
-// @version     1.2.14
-// @downloadURL https://kawaiian.pizza/YouTube Theater Mode.user.js
-// @homepageURL https://kawaiian.pizza/YouTube Theater Mode.user.js
+// @version     1.2.15
+// @downloadURL https://github.com/KawaiianPizza/Scripts/raw/main/YouTube%20Theater%20Mode.user.js
+// @homepageURL https://github.com/KawaiianPizza/Scripts/raw/main/YouTube%20Theater%20Mode.user.js
 // @author      Kawaiian Pizza
 // @description 4/4/2022, 9:16:34 PM
 // ==/UserScript==
@@ -62,13 +62,14 @@ margin: 0 auto !important;
 height: unset !important;
 min-height: unset !important;
 }
-ytd-app[is-video-page][fullscreen] :is(#player-theater-container, #player-wide-container, #ytd-player) {
+ytd-app[is-video-page][fullscreen] :is(#player-theater-container, #player-wide-container, #ytd-player, #full-bleed-container) {
 max-width: 100% !important;
+height: 100dvh !important;
 }
 ytd-app[is-video-page][theater] :is(.html5-video-container>video, #player-full-bleed-container) {
 position: unset !important;
-height: calc(min(100vh, calc(100vw * calc(var(--ytd-watch-flexy-height-ratio) / var(--ytd-watch-flexy-width-ratio)))) - var(--header-size)) !important;
-max-height: 100vh !important;
+height: calc(min(100dvh, calc(100dvw * calc(var(--ytd-watch-flexy-height-ratio) / var(--ytd-watch-flexy-width-ratio)))) - var(--header-size)) !important;
+max-height: 100dvh !important;
 width: auto !important;
 background: unset !important;
 }
