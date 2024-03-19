@@ -3,7 +3,7 @@
 // @namespace   Violentmonkey Scripts
 // @match       https://www.youtube.com/*
 // @run-at      document-body
-// @version     1.2.15
+// @version     1.2.16
 // @downloadURL https://github.com/KawaiianPizza/Scripts/raw/main/YouTube%20Theater%20Mode.user.js
 // @homepageURL https://github.com/KawaiianPizza/Scripts/raw/main/YouTube%20Theater%20Mode.user.js
 // @author      Kawaiian Pizza
@@ -113,5 +113,11 @@ style.textContent += `
 display: block !important;
 }
 #movie_player>.ytp-ce-element {
+display: none !important;
+}`
+
+// Hidden extra buttons
+style.textContent += `
+.ytp-next-button.ytp-button, .ytp-remote-button.ytp-button {
 display: none !important;
 }`
