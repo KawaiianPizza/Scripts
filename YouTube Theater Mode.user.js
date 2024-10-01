@@ -3,7 +3,7 @@
 // @namespace   Violentmonkey Scripts
 // @match       https://www.youtube.com/*
 // @run-at      document-body
-// @version     1.2.16
+// @version     1.2.17
 // @downloadURL https://github.com/KawaiianPizza/Scripts/raw/main/YouTube%20Theater%20Mode.user.js
 // @homepageURL https://github.com/KawaiianPizza/Scripts/raw/main/YouTube%20Theater%20Mode.user.js
 // @author      Kawaiian Pizza
@@ -30,7 +30,7 @@ let wait = setInterval(()=>{
 },1)
 
 async function UpdateApp() {
-  document.location.pathname.match(/\/(?:watch|clip)/)
+  document.location.pathname.match(/\/(?:watch|clip|live)/)
   ? app.setAttribute('is-video-page','')
   : app.removeAttribute('is-video-page')
 
@@ -64,13 +64,11 @@ min-height: unset !important;
 }
 ytd-app[is-video-page][fullscreen] :is(#player-theater-container, #player-wide-container, #ytd-player, #full-bleed-container) {
 max-width: 100% !important;
-height: 100dvh !important;
 }
 ytd-app[is-video-page][theater] :is(.html5-video-container>video, #player-full-bleed-container) {
 position: unset !important;
-height: calc(min(100dvh, calc(100dvw * calc(var(--ytd-watch-flexy-height-ratio) / var(--ytd-watch-flexy-width-ratio)))) - var(--header-size)) !important;
-max-height: 100dvh !important;
-width: auto !important;
+height: min(100dvh - var(--header-size), calc(100dvw * calc(var(--ytd-watch-flexy-height-ratio) / var(--ytd-watch-flexy-width-ratio)))) !important;
+width: min(100dvw, calc((100dvh - var(--header-size)) / calc(var(--ytd-watch-flexy-height-ratio) / var(--ytd-watch-flexy-width-ratio)))) !important;
 background: unset !important;
 }
 #player-theater-container>#player-container, #player-wide-container>#player-container {
@@ -86,8 +84,7 @@ text-align: -webkit-center !important;
 }
 #cinematics>div>div {
 transform: scale(4, 2) !important;
-}
-`
+}`
 
 // Hidden header
 style.textContent += `
@@ -113,11 +110,5 @@ style.textContent += `
 display: block !important;
 }
 #movie_player>.ytp-ce-element {
-display: none !important;
-}`
-
-// Hidden extra buttons
-style.textContent += `
-.ytp-next-button.ytp-button, .ytp-remote-button.ytp-button {
 display: none !important;
 }`
