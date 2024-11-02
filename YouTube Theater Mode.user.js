@@ -3,7 +3,7 @@
 // @namespace   Violentmonkey Scripts
 // @match       https://www.youtube.com/*
 // @run-at      document-body
-// @version     1.2.17
+// @version     1.2.18
 // @downloadURL https://github.com/KawaiianPizza/Scripts/raw/main/YouTube%20Theater%20Mode.user.js
 // @homepageURL https://github.com/KawaiianPizza/Scripts/raw/main/YouTube%20Theater%20Mode.user.js
 // @author      Kawaiian Pizza
@@ -111,4 +111,10 @@ display: block !important;
 }
 #movie_player>.ytp-ce-element {
 display: none !important;
+}`
+
+// Disable sponsor clicking
+style.textContent += `
+.YtInlinePlayerControlsTopLeftControls {
+pointer-events: none !important;
 }`
