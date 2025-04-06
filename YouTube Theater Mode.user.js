@@ -3,7 +3,7 @@
 // @namespace   Violentmonkey Scripts
 // @match       https://www.youtube.com/*
 // @run-at      document-body
-// @version     1.2.18
+// @version     1.2.19
 // @downloadURL https://github.com/KawaiianPizza/Scripts/raw/main/YouTube%20Theater%20Mode.user.js
 // @homepageURL https://github.com/KawaiianPizza/Scripts/raw/main/YouTube%20Theater%20Mode.user.js
 // @author      Kawaiian Pizza
@@ -115,6 +115,6 @@ display: none !important;
 
 // Disable sponsor clicking
 style.textContent += `
-.YtInlinePlayerControlsTopLeftControls {
+.ytInlinePlayerControlsTopLeftControls {
 pointer-events: none !important;
 }`
