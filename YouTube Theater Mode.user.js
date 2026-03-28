@@ -3,7 +3,7 @@
 // @namespace   Violentmonkey Scripts
 // @match       https://www.youtube.com/*
 // @run-at      document-body
-// @version     1.2.19
+// @version     1.2.20
 // @downloadURL https://github.com/KawaiianPizza/Scripts/raw/main/YouTube%20Theater%20Mode.user.js
 // @homepageURL https://github.com/KawaiianPizza/Scripts/raw/main/YouTube%20Theater%20Mode.user.js
 // @author      Kawaiian Pizza
@@ -100,7 +100,7 @@ ytd-app[is-video-page][theater]>#content>#masthead-container:hover {
 opacity: 1 !important;
 transition: opacity .25s cubic-bezier(0,0,0.2,1) !important;
 }
-ytd-app[is-video-page][theater]:not([fullscreen]) :is(.ytp-chrome-top,.iv-drawer>div,.html5-video-info-panel) {
+ytd-app[is-video-page][theater]:not([fullscreen]) :is(.ytp-chrome-top,.iv-drawer>div,.html5-video-info-panel,.ytp-overlays-container) {
 margin-top: calc(56px - var(--header-size)) !important;
 }`
 
