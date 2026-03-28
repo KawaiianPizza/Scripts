@@ -2,7 +2,7 @@
 // @name        Old Reddit
 // @namespace   Violentmonkey Scripts
 // @match       https://*.reddit.com/*
-// @version     1.0
+// @version     1.0.1
 // @downloadURL https://github.com/KawaiianPizza/Scripts/raw/main/Old%20Reddit.user.js
 // @homepageURL https://github.com/KawaiianPizza/Scripts/raw/main/Old%20Reddit.user.js
 // @author      KawaiianPizza
@@ -16,7 +16,6 @@ if (location.host.startsWith("old.")) {
   const IS_GALLERY = location.pathname.indexOf("comments") === -1
   const LINK_SELECTOR = IS_GALLERY ? ".thing[data-permalink] a.title" : ".usertext-body p > a:not(:has(img))"
 
-  // Process all matching links inside a given container
   function processLinks(container = document) {
     const links = container.querySelectorAll(LINK_SELECTOR)
 
@@ -40,10 +39,11 @@ if (location.host.startsWith("old.")) {
         img.src = link.href
         img.alt = "<image>"
         img.loading = "lazy"
+        img.style.maxHeight="calc(100dvh - 200px)"
         link.dataset.imageReplaced = "true"
         link.replaceWith(img)
       }
-    },0)
+    }, 0)
   }
 
   const observerCallback = (mutationsList) => {
@@ -55,7 +55,6 @@ if (location.host.startsWith("old.")) {
         if(IS_GALLERY) {
           if (node.classList.contains("promoted")) continue
         }
-        //console.log(node)
         processLinks(node)
       }
     }
