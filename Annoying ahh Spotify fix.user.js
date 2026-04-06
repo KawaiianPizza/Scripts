@@ -2,7 +2,7 @@
 // @name        Annoying ahh Spotify fix
 // @namespace   Violentmonkey Scripts
 // @match       https://open.spotify.com/*
-// @version     1.0
+// @version     1.0.1
 // @downloadURL https://github.com/KawaiianPizza/Scripts/raw/main/Annoying%20ahh%20Spotify%20fix.user.js
 // @homepageURL https://github.com/KawaiianPizza/Scripts/raw/main/Annoying%20ahh%20Spotify%20fix.user.js
 // @author      KawaiianPizza
@@ -35,7 +35,10 @@ const scrollToBottomInterval = setInterval(()=>{
       newButton.className = rowNode.lastChild.previousSibling.className
       newButton.textContent = "Scroll ⭳"
       newButton.addEventListener("click", function() {
-        addedNode.querySelector("div[data-testid=\"recommended-track\"]").previousSibling.scrollIntoView({ behavior: 'auto', block: 'end' })
+        console.log(addedNode)
+        const scrollable = addedNode.parentElement.parentElement.parentElement
+        const playlist = addedNode.querySelector("div.contentSpacing>div:first-child:has(div[data-testid=\"playlist-tracklist\"])")
+        scrollable.scrollTo({ top: playlist.scrollHeight, behavior: "smooth" })
       })
 
       rowNode.insertBefore(newButton, rowNode.lastChild)
